@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "no.ssb.dapla.dlp.pseudo.conf.protobuf";
+
+service PseudoConfService {
+    rpc GetConf (GetConfRequest) returns (GetConfResponse);
+    rpc CreateConf (CreateConfRequest) returns (CreateConfResponse);
+}
+
+message PseudoConf {
+    string id = 1;
+    string impl = 2;
+    string params = 3;
+}
+
+message GetConfRequest {
+    string id = 1;
+}
+
+message GetConfResponse {
+    string id = 1;
+    PseudoConf conf = 2;
+}
+
+message CreateConfRequest {
+    string id = 1;
+    PseudoConf conf = 2;
+}
+
+message CreateConfResponse {
+    string id = 1;
+}
