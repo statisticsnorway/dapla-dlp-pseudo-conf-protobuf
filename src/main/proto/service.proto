@@ -19,12 +19,10 @@ message GetConfRequest {
 }
 
 message GetConfResponse {
-    string id = 1;
     PseudoConf conf = 2;
 }
 
 message CreateConfRequest {
-    string id = 1;
     PseudoConf conf = 2;
 }
 
